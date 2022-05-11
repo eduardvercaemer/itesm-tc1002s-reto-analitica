@@ -18,6 +18,9 @@ print(data[["Country Name", "2020"]])
 
 # plot mexico gdp
 data.set_axis(data['Country Name'], axis=0, inplace=True)
+data.sort_values('2020', inplace=True, ascending=False)
+data = data.head(n=20)
+data = data.tail(n=5)
 data[data.columns[2:]].transpose().plot()
 plt.show()
 
