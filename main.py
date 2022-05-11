@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import pandas as pd
 
 # cargar datos
@@ -14,4 +15,9 @@ print(data[data.columns[2:]].describe())
 
 # paises y su gdp en 2020
 print(data[["Country Name", "2020"]])
+
+# plot mexico gdp
+data.set_axis(data['Country Name'], axis=0, inplace=True)
+data[data.columns[2:]].transpose().plot()
+plt.show()
 
