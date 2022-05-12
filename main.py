@@ -84,3 +84,20 @@ plt.show()
 # Sí, por ejemplo, los grupos con mayor gdp en el año 2020, son los grupos
 # que incluyen muchos paises, como regiones continentales, o el gdp combinado
 # del mundo, etc
+
+# analisis de 'caja' para gdp en el 2020
+
+gdp_2020 = data['2020']
+# create box graph
+gdp_2020.plot(kind='box')
+plt.show()
+
+# analisis de 'heatmap' para gdp en el 2020
+
+plt.figure(figsize=(10, 10))
+plt.title('GDP')
+plt.ylabel('Year')
+plt.xlabel('Countries')
+plt.imshow(data[data.columns[2:]].transpose(), cmap='hot', interpolation='nearest')
+plt.colorbar()
+plt.show()
